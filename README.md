@@ -1,1 +1,1 @@
-# Nifty-Calandar
+# Nifty-Calendar
