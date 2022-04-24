@@ -1,6 +1,6 @@
 const today = moment();
 $("#currentDay").text(today.format("MMM Do, YYYY"));
-const currenthour = moment().format('h');
+const currenthour = moment().hour()
 
 
 // create an function to save information from the textarea to my localstorage
@@ -29,7 +29,9 @@ function getInfo() {
 // check time by the hour and add a class of past present or future
 
 function currentTime() {
-    if (currenthour == 'h') {
-        addClass('.present')
-    }
+    let textbox = $('.text')
+    for (var i =0; i < textbox.length; i++) {
+    if (textbox.length > currenthour)
+        textbox.addClass('past')
+    } 
 }
