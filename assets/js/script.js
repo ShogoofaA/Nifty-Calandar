@@ -31,15 +31,15 @@ function getInfo() {
 function currentTime() {
     console.log('siuedfb')
     let textbox = $('.text')
-    let textId = textbox[i].id;
-    let Id = document.getElementById(textbox[i].id)
     for (var i = 0; i < textbox.length; i++) {
+        let textId = textbox[i].id;
+        let getID = document.getElementById(textbox[i].id)
         if (textId < currenthour) {
-            $(Id).addClass('past')
+            $(getID).addClass('past')
         } else if (textId > currenthour) {
-            $(Id).addClass("future")
+            $(getID).addClass("future")
         } else {
-            $(Id).addClass("present")
+            $(getID).addClass("present")
         }
     }
 }
