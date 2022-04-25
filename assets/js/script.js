@@ -9,11 +9,12 @@ $('.saveBtn').on('click', saveText);
 function saveText() {
     let saved = $(this).siblings('textarea').val();
     let savedID = $(this).siblings('textarea').attr('id');
-    localStorage.setItem(saved, savedID)
+    localStorage.setItem(savedID, saved)
     console.log('blargh')
 }
 
 function getInfo() {
+    console.log('blarghblargh')
     $('#9').val(localStorage.getItem('9'))
     $('#10').val(localStorage.getItem('10'))
     $('#11').val(localStorage.getItem('11'))
@@ -29,11 +30,14 @@ function getInfo() {
 // check time by the hour and add a class of past present or future
 
 function currentTime() {
-    console.log('siuedfb')
+    console.log('blarghblarghblargh')
     let textbox = $('.text')
     for (var i = 0; i < textbox.length; i++) {
         let textId = textbox[i].id;
         let getID = document.getElementById(textbox[i].id)
+        $(textbox[i].id).removeClass('.past')
+        $(textbox[i].id).removeClass('.present')
+        $(textbox[i].id).removeClass('.future')
         if (textId < currenthour) {
             $(getID).addClass('past')
         } else if (textId > currenthour) {
@@ -43,5 +47,5 @@ function currentTime() {
         }
     }
 }
-setInterval(currentTime(), (1000 * 60))
+setInterval(currentTime(), (1000 * 60) * 10)
 getInfo()
