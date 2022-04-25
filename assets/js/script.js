@@ -29,9 +29,19 @@ function getInfo() {
 // check time by the hour and add a class of past present or future
 
 function currentTime() {
+    console.log('siuedfb')
     let textbox = $('.text')
-    for (var i =0; i < textbox.length; i++) {
-    if (textbox.length > currenthour)
-        textbox.addClass('past')
-    } 
+    let textId = textbox[i].id;
+    let Id = document.getElementById(textbox[i].id)
+    for (var i = 0; i < textbox.length; i++) {
+        if (textId < currenthour) {
+            $(Id).addClass('past')
+        } else if (textId > currenthour) {
+            $(Id).addClass("future")
+        } else {
+            $(Id).addClass("present")
+        }
+    }
 }
+setInterval(currentTime(), (1000 * 60))
+getInfo()
