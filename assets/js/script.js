@@ -41,11 +41,11 @@ function currentTime() {
         if (textId < currenthour) {
             $(getID).addClass('past')
         } else if (textId > currenthour) {
-            $(getID).addClass("future")
+            $(getID).addClass('future')
         } else {
-            $(getID).addClass("present")
+            $(getID).addClass('present')
         }
     }
 }
-setInterval(currentTime(), (1000 * 60) * 10)
+setInterval(currentTime(), (1000 * 60) * 3)
 getInfo()
