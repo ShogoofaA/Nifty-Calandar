@@ -33,16 +33,25 @@ function currentTime() {
     console.log('blarghblarghblargh')
     let textbox = $('.text')
     for (var i = 0; i < textbox.length; i++) {
-        let textId = textbox[i].id;
+        let textId = parseInt(textbox[i].id);
         let getID = document.getElementById(textbox[i].id)
+        if (textId < 9) {
+            textId = textId +12
+        }
         $(textbox[i].id).removeClass('.past')
         $(textbox[i].id).removeClass('.present')
         $(textbox[i].id).removeClass('.future')
+        console.log(textId, currenthour)
         if (textId < currenthour) {
+            console.log("past", textId)
             $(getID).addClass('past')
         } else if (textId > currenthour) {
+            console.log("future", textId)
+
             $(getID).addClass('future')
         } else {
+            console.log("present", textId)
+
             $(getID).addClass('present')
         }
     }
